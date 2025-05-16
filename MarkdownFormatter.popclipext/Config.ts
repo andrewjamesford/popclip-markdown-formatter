@@ -201,12 +201,12 @@ export default {
 			code: (selection) => popclip.pasteText(codeBlock(selection.text)),
 		},
 		{
-			title: "Headings Minus (-)",
+			title: "Heading -",
 			icon: "square H-",
 			code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
 		},
 		{
-			title: "Headings Plus (+)",
+			title: "Heading +",
 			icon: "square H+",
 			code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
 		},
