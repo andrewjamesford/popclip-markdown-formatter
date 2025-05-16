@@ -57,7 +57,7 @@ function bulletedList(text: string): string {
 }
 
 function blockQuote(text: string): string {
-  const formattedText = formatText(text, "> ");
+  const formattedText = `> ${text}`;
   return formattedText;
 }
 
@@ -103,7 +103,7 @@ function taskList(text: string): string {
   return formattedText;
 }
 
-function headingsPlus(text: string): string {
+function headingsMinus(text: string): string {
   // Split the text into lines
   const lines = text.split("\\n");
   let headingLevel = 0;
@@ -123,7 +123,7 @@ function headingsPlus(text: string): string {
   return formattedText;
 }
 
-function headingsMinus(text: string): string {
+function headingsPlus(text: string): string {
   // Split the text into lines
   const lines = text.split("\\n");
   let headingLevel = 0;
@@ -146,11 +146,6 @@ function headingsMinus(text: string): string {
 
 export default {
   actions: [
-    // {
-    //   title: "Strike through",
-    //   icon: "symbol:strikethrough",
-    //   code: (selection) => popclip.pasteText(strikethrough(selection.text)),
-    // },
     {
       title: "Inline Code",
       icon: "symbol:chevron.left.chevron.right",
@@ -161,16 +156,6 @@ export default {
       icon: "symbol:list.bullet",
       code: (selection) => popclip.pasteText(bulletedList(selection.text)),
     },
-    // {
-    //   title: "Numbered List",
-    //   icon: "symbol:list.number",
-    //   code: (selection) => popclip.pasteText(numberedList(selection.text)),
-    // },
-    // {
-    //   title: "Task List",
-    //   icon: "symbol:list.bullet.rectangle",
-    //   code: (selection) => popclip.pasteText(taskList(selection.text)),
-    // },
     {
       title: "Block Quote",
       icon: "symbol:quote.bubble",
@@ -184,12 +169,27 @@ export default {
     {
       title: "Headings Minus (-)",
       icon: "square H-",
-      code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
+      code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
     },
     {
       title: "Headings Plus (+)",
       icon: "square H+",
-      code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
+      code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
     },
+    // {
+    //   title: "Strike through",
+    //   icon: "symbol:strikethrough",
+    //   code: (selection) => popclip.pasteText(strikethrough(selection.text)),
+    // },
+    // {
+    //   title: "Numbered List",
+    //   icon: "symbol:list.number",
+    //   code: (selection) => popclip.pasteText(numberedList(selection.text)),
+    // },
+    // {
+    //   title: "Task List",
+    //   icon: "symbol:list.bullet.rectangle",
+    //   code: (selection) => popclip.pasteText(taskList(selection.text)),
+    // },
   ],
 };

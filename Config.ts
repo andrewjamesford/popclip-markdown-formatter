@@ -57,7 +57,7 @@ function bulletedList(text: string): string {
 }
 
 function blockQuote(text: string): string {
-  const formattedText = formatText(text, "> ");
+  const formattedText = `> ${text}`;
   return formattedText;
 }
 
@@ -147,11 +147,6 @@ function headingsPlus(text: string): string {
 export default {
   actions: [
     {
-      title: "Inline Code",
-      icon: "symbol:chevron.left.chevron.right",
-      code: (selection) => popclip.pasteText(inlineCode(selection.text)),
-    },
-    {
       title: "Bulleted List",
       icon: "symbol:list.bullet",
       code: (selection) => popclip.pasteText(bulletedList(selection.text)),
@@ -160,6 +155,11 @@ export default {
       title: "Block Quote",
       icon: "symbol:quote.bubble",
       code: (selection) => popclip.pasteText(blockQuote(selection.text)),
+    },
+    {
+      title: "Inline Code",
+      icon: "symbol:chevron.left.chevron.right",
+      code: (selection) => popclip.pasteText(inlineCode(selection.text)),
     },
     {
       title: "Code Block",
