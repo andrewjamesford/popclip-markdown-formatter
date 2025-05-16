@@ -103,7 +103,7 @@ function taskList(text: string): string {
   return formattedText;
 }
 
-function headingsPlus(text: string): string {
+function headingsMinus(text: string): string {
   // Split the text into lines
   const lines = text.split("\\n");
   let headingLevel = 0;
@@ -123,7 +123,7 @@ function headingsPlus(text: string): string {
   return formattedText;
 }
 
-function headingsMinus(text: string): string {
+function headingsPlus(text: string): string {
   // Split the text into lines
   const lines = text.split("\\n");
   let headingLevel = 0;
@@ -147,11 +147,6 @@ function headingsMinus(text: string): string {
 export default {
   actions: [
     {
-      title: "Strike through",
-      icon: "symbol:strikethrough",
-      code: (selection) => popclip.pasteText(strikethrough(selection.text)),
-    },
-    {
       title: "Inline Code",
       icon: "symbol:chevron.left.chevron.right",
       code: (selection) => popclip.pasteText(inlineCode(selection.text)),
@@ -162,49 +157,39 @@ export default {
       code: (selection) => popclip.pasteText(bulletedList(selection.text)),
     },
     {
-      title: "Numbered List",
-      icon: "symbol:list.number",
-      code: (selection) => popclip.pasteText(numberedList(selection.text)),
-    },
-    {
-      title: "Task List",
-      icon: "symbol:list.bullet.rectangle",
-      code: (selection) => popclip.pasteText(taskList(selection.text)),
-    },
-    {
       title: "Block Quote",
       icon: "symbol:quote.bubble",
       code: (selection) => popclip.pasteText(blockQuote(selection.text)),
     },
     {
-      title: "Bold",
-      icon: "symbol:textformat.bold",
-      code: (selection) => popclip.pasteText(bold(selection.text)),
-    },
-    {
-      title: "Italic",
-      icon: "symbol:textformat.italic",
-      code: (selection) => popclip.pasteText(italic(selection.text)),
-    },
-    {
-      title: "Highlight",
-      icon: "symbol:textformat.underline",
-      code: (selection) => popclip.pasteText(highlight(selection.text)),
-    },
-    {
       title: "Code Block",
-      icon: "symbol:textformat.code",
+      icon: "iconify:fluent:code-block-edit-20-regular",
       code: (selection) => popclip.pasteText(codeBlock(selection.text)),
     },
     {
       title: "Headings Minus (-)",
       icon: "square H-",
-      code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
+      code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
     },
     {
       title: "Headings Plus (+)",
       icon: "square H+",
-      code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
+      code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
     },
+    // {
+    //   title: "Strike through",
+    //   icon: "symbol:strikethrough",
+    //   code: (selection) => popclip.pasteText(strikethrough(selection.text)),
+    // },
+    // {
+    //   title: "Numbered List",
+    //   icon: "symbol:list.number",
+    //   code: (selection) => popclip.pasteText(numberedList(selection.text)),
+    // },
+    // {
+    //   title: "Task List",
+    //   icon: "symbol:list.bullet.rectangle",
+    //   code: (selection) => popclip.pasteText(taskList(selection.text)),
+    // },
   ],
 };
