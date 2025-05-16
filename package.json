@@ -1,7 +1,8 @@
 {
   "scripts": {
     "check": "tsc --noEmit",
-    "lint": "biome lint --fix"
+    "lint": "biome lint --fix",
+    "build": "./bundle.sh"
   },
   "dependencies": {
     "@popclip/helpers": "file:lib/popclip-helpers",
