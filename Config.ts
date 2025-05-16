@@ -65,8 +65,14 @@ function highlight(text: string): string {
   const formattedText = formatText(text, "==");
   return formattedText;
 }
+
 function underline(text: string): string {
   const formattedText = formatText(text, "u");
+  return formattedText;
+}
+
+function codeBlock(text: string): string {
+  const formattedText = formatText(text, "```\\n");
   return formattedText;
 }
 
@@ -97,11 +103,6 @@ function taskList(text: string): string {
   return formattedText;
 }
 
-function codeBlock(text: string): string {
-  const formattedText = formatText(text, "```\\n");
-  return formattedText;
-}
-
 function headingsPlus(text: string): string {
   // Split the text into lines
   const lines = text.split("\\n");
@@ -115,7 +116,7 @@ function headingsPlus(text: string): string {
   // Map each line to the formatted version
   const formattedLines = lines.map((line) => {
     const tag = "#".repeat(headingLevel + 1);
-    return `${tag} ${line}`;
+    return `${tag.trim()} ${line}`;
   });
   // Join the formatted lines into a single string
   const formattedText = formattedLines.join("\\n");
@@ -136,7 +137,7 @@ function headingsMinus(text: string): string {
   // Map each line to the formatted version
   const formattedLines = lines.map((line) => {
     const tag = "#".repeat(headingLevel - 1);
-    return `${tag} ${line}`;
+    return `${tag.trim()} ${line}`;
   });
   // Join the formatted lines into a single string
   const formattedText = formattedLines.join("\\n");
@@ -196,13 +197,13 @@ export default {
       code: (selection) => popclip.pasteText(codeBlock(selection.text)),
     },
     {
-      title: "Headings Plus (+)",
-      icon: "symbol:textformat.heading.1",
+      title: "Headings Minus (-)",
+      icon: "square H-",
       code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
     },
     {
-      title: "Headings Minus (-)",
-      icon: "symbol:textformat.heading.2",
+      title: "Headings Plus (+)",
+      icon: "square H+",
       code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
     },
   ],
