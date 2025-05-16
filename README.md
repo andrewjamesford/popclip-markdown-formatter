@@ -20,6 +20,8 @@ This extension adds the following formatting options to PopClip:
 - **Bold**: Wraps selected text with `**` markers
 - **Italic**: Wraps selected text with `_` markers  
 - **Highlight**: Wraps selected text with `==` markers
+
+
 - **Inline Code**: Wraps selected text with backticks (`)
 - **Blockquote**: Prepends `> ` to each line
 - **Unordered List**: Prepends `- ` to each line

@@ -1,15 +1,16 @@
 {
   "scripts": {
     "check": "tsc --noEmit",
-    "convert": "misc/pcxconvert"
+    "build": "esbuild formatter.ts --outfile=build/formatter.js"
   },
   "dependencies": {
     "@popclip/helpers": "file:lib/popclip-helpers",
-    "@popclip/types": "^1.4892.0",
-    "core-js": "^3.22.7",
-    "esbuild": "^0.25.4"
+    "core-js": "^3.22.7"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@popclip/types": "^1.4892.0",
+    "esbuild": "^0.25.4",
+    "typescript": "^5.8.3",
+    "@types/node": "^20.4.3"
   }
 }
