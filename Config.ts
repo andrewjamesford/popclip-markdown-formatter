@@ -1,10 +1,10 @@
 // #popclip
-// name: Obsidian Formatter
-// identifier: com.andrewford.popclip.extension.obsidian-formatter
-// description: Apply Markdown formatting to selected text in Obsidian
-// icon: symbol:textformat
+// name: Markdown Formatter
+// identifier: com.andrewford.popclip.extension.markdown-formatter
+// description: Apply Markdown formatting to selected text
+// icon: square MD
 // popclip version: 4586
-// keywords: obsidian, markdown, formatter
+// keywords: markdown, formatter,
 // language: typescript
 // module: true
 

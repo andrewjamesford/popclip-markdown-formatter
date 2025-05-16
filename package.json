@@ -1,7 +1,7 @@
 {
   "scripts": {
     "check": "tsc --noEmit",
-    "build": "esbuild formatter.ts --outfile=build/formatter.js"
+    "lint": "biome lint --fix"
   },
   "dependencies": {
     "@popclip/helpers": "file:lib/popclip-helpers",

@@ -1,16 +1,10 @@
-# Obsidian Markdown Formatter 
+# Markdown Formatter 
 
-A PopClip extension that provides quick Markdown formatting options for text that will be used in Obsidian notes.
+A PopClip extension that provides quick Markdown formatting options for text.
 
 ## Author
 
 Andrew Ford - https://andrewford.co.nz
-
-## Aknowledgements
-
-The basis for this extension was made from this Noteplan popclip plugin. 
-
-https://huertas.tech/noteplan/markdown-magic
 
 ## Features
 
