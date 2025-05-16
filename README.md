@@ -16,13 +16,20 @@ https://huertas.tech/noteplan/markdown-magic
 
 This extension adds the following formatting options to PopClip:
 
+### Essential Formatting
 - **Bold**: Wraps selected text with `**` markers
 - **Italic**: Wraps selected text with `_` markers  
-- **Underline**: Wraps selected text with `<u>` HTML tags
-- **Strikethrough**: Wraps selected text with `~~` markers
 - **Highlight**: Wraps selected text with `==` markers
 - **Inline Code**: Wraps selected text with backticks (`)
 - **Blockquote**: Prepends `> ` to each line
+- **Unordered List**: Prepends `- ` to each line
+
+### Advanced Formatting
+- **Code Block**: Wraps selected text with triple backticks (```) and adds a language identifier (e.g., `python`, `javascript`, etc.)
+- **Ordered List**: Prepends `1. ` to each line
+- **Task List**: Prepends `- [ ] ` to each line
+- **Underline**: Wraps selected text with `<u>` HTML tags
+- **Strikethrough**: Wraps selected text with `~~` markers
 - **H1**: Prepends `# ` to each line
 - **H2**: Prepends `## ` to each line
 - etc

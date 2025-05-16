@@ -5,9 +5,11 @@
   },
   "dependencies": {
     "@popclip/helpers": "file:lib/popclip-helpers",
-    "@popclip/types": "1.4688.1",
+    "@popclip/types": "^1.4892.0",
     "core-js": "^3.22.7",
-    "esbuild": "^0.25.4",
-    "typescript": "^5.5.2"
+    "esbuild": "^0.25.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }
