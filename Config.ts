@@ -76,7 +76,8 @@ function underline(text: string): string {
 }
 
 function codeBlock(text: string): string {
-	const formattedText = formatText(text, "```\\n");
+	const trimmedText = text.trim();
+	const formattedText = `\`\`\` \n${trimmedText}\n\`\`\``;
 	return formattedText;
 }
 

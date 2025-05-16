@@ -1,17 +1,16 @@
 {
-  "scripts": {
-    "check": "tsc --noEmit",
-    "lint": "biome lint --fix",
-    "build": "./bundle.sh"
-  },
-  "dependencies": {
-    "@popclip/helpers": "file:lib/popclip-helpers",
-    "core-js": "^3.22.7"
-  },
-  "devDependencies": {
-    "@popclip/types": "^1.4892.0",
-    "esbuild": "^0.25.4",
-    "typescript": "^5.8.3",
-    "@types/node": "^20.4.3"
-  }
+	"scripts": {
+		"check": "tsc --noEmit",
+		"lint": "biome lint --fix",
+		"build": "./bundle.sh"
+	},
+	"dependencies": {
+		"core-js": "^3.22.7"
+	},
+	"devDependencies": {
+		"@popclip/types": "^1.4892.0",
+		"esbuild": "^0.25.4",
+		"typescript": "^5.8.3",
+		"@types/node": "^20.4.3"
+	}
 }

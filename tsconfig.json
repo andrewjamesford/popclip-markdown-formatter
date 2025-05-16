@@ -23,8 +23,6 @@
     "forceConsistentCasingInFileNames": true,
   },
   "include": [
-    ".*.ts",
-    "lib/**/*.ts",
-    "lib/**/*.json"
+    "*.ts"
   ]
 }
