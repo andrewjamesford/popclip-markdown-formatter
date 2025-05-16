@@ -7,7 +7,7 @@
     "@popclip/helpers": "0.1.0",
     "@popclip/types": "1.4688.1",
     "core-js": "^3.22.7",
-    "esbuild": "^0.21.4",
+    "esbuild": "^0.25.4",
     "typescript": "^5.5.2"
   }
 }
