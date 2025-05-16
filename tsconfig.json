@@ -23,6 +23,8 @@
     "noEmit": true
   },
   "include": [
-    ".*.ts"
+    ".*.ts",
+    "lib/**/*.ts",
+    "lib/**/*.json"
   ]
 }
