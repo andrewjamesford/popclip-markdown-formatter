@@ -17,52 +17,52 @@
     {
       "title": "Strikethrough",
       "icon": "symbol:strikethrough",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `~~${line}~~`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "strikethrough();"
     },
     {
       "title": "Highlight",
       "icon": "symbol:highlighter",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `==${line}==`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "highlight();"
     },
     {
       "title": "Inline Code",
       "icon": "symbol:chevron.left.chevron.right",
-      "javascript": "popclip.pasteText('`' + popclip.input.text + '`');"
+      "javascript": "inlineCode();"
     },
     {
       "title": "Bullet List",
       "icon": "symbol:list.bullet",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `- ${line}`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "bulletedList();"
     },
     {
       "title": "Numbered List",
       "icon": "symbol:list.number",
-      "javascript": "const lines = popclip.input.text.split('\\n'); let counter = 1; const formatted = lines.map(line => `${counter++}. ${line}`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "numberedList();"
     },
     {
       "title": "Task List",
       "icon": "symbol:square",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `- [ ] ${line}`).join('\\n'); popclip.pasteText(formatted);"
-    },
-    {
-      "title": "Back Link",
-      "icon": "symbol:link",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `[[${line}]]`).join('\\n'); popclip.pasteText(formatted);"
-    },
-    {
-      "title": "Markdown Link",
-      "icon": "symbol:link.circle.fill",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `[${line}]()`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "taskList();"
     },
     {
       "title": "Code Block",
       "icon": "symbol:chevron.left.forwardslash.chevron.right",
-      "javascript": "popclip.pasteText(\"```\\n\" + popclip.input.text + \"\\n```\");"
+      "javascript": "codeBlock();"
     },
     {
       "title": "Blockquote",
       "icon": "symbol:text.quote",
-      "javascript": "const lines = popclip.input.text.split('\\n'); const formatted = lines.map(line => `> ${line}`).join('\\n'); popclip.pasteText(formatted);"
+      "javascript": "blockQuote();"
+    },
+    {
+      "title": "Heading +",
+      "icon": "square H+",
+      "javascript": "headingPlus();"
+    },
+    {
+      "title": "Heading -",
+      "icon": "square H-",
+      "javascript": "headingMinus();"
     }
   ]
 }

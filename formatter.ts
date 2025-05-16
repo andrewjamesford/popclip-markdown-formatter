@@ -60,6 +60,11 @@ function blockQuote(): void {
   const formattedText = formatText(text, "> ");
   pasteText(formattedText);
 }
+function highlight(): void {
+  const text = getInputText();
+  const formattedText = formatText(text, "==");
+  pasteText(formattedText);
+}
 // Underline is not supported in Obsidian
 // function underline(): void {
 //   const text = getInputText();
@@ -77,6 +82,18 @@ function numberedList(): void {
   const formattedLines = lines.map((line) => {
     counter++;
     return wrapSelectedText(line, `${counter}. `);
+  });
+  // Join the formatted lines into a single string
+  const formattedText = formattedLines.join("\\n");
+  pasteText(formattedText);
+}
+function taskList(): void {
+  const text = getInputText();
+  // Split the text into lines
+  const lines = text.split("\\n");
+  // Map each line to the formatted version
+  const formattedLines = lines.map((line) => {
+    return wrapSelectedText(line, "- [ ] ");
   });
   // Join the formatted lines into a single string
   const formattedText = formattedLines.join("\\n");
@@ -109,6 +126,22 @@ function headingsPlus(): void {
 }
 function headingsMinus(): void {
   const text = getInputText();
-  const formattedText = formatText(text, "## ");
+  // Split the text into lines
+  const lines = text.split("\\n");
+  let headingLevel = 0;
+  // find if there is a HX tag in the text
+  const hasHeading = lines.find((line) => line.startsWith("#"));
+  if (hasHeading) {
+    // Get the number of ##s in the first line
+    headingLevel = hasHeading.match(/#/g)?.length || 0;
+  }
+
+  // Map each line to the formatted version
+  const formattedLines = lines.map((line) => {
+    const tag = "#".repeat(headingLevel - 1);
+    return `${tag} ${line}`;
+  });
+  // Join the formatted lines into a single string
+  const formattedText = formattedLines.join("\\n");
   pasteText(formattedText);
 }
