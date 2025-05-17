@@ -22,6 +22,10 @@ function wrapSelectedText(text: string, tag: string): string {
 }
 
 function formatText(text: string, tag: string): string {
+	// Check if the text is empty
+	if (text.trim() === "") {
+		return text;
+	}
 	// Split the text into lines
 	const lines = text.split("\\n");
 
@@ -35,27 +39,27 @@ function formatText(text: string, tag: string): string {
 }
 
 // Action functions
-function strikethrough(text: string): string {
+export function strikethrough(text: string): string {
 	const formattedText = formatText(text, "~~");
 	return formattedText;
 }
 
-function bold(text: string): string {
+export function bold(text: string): string {
 	const formattedText = formatText(text, "**");
 	return formattedText;
 }
 
-function italic(text: string): string {
+export function italic(text: string): string {
 	const formattedText = formatText(text, "_");
 	return formattedText;
 }
 
-function inlineCode(text: string): string {
+export function inlineCode(text: string): string {
 	const formattedText = formatText(text, "`");
 	return formattedText;
 }
 
-function bulletedList(text: string): string {
+export function bulletedList(text: string): string {
 	// Split the text into lines
 	const lines = text.split("\\n");
 
@@ -70,29 +74,29 @@ function bulletedList(text: string): string {
 	return formattedText;
 }
 
-function blockQuote(text: string): string {
+export function blockQuote(text: string): string {
 	const formattedText = `> ${text}`;
 	return formattedText;
 }
 
-function highlight(text: string): string {
+export function highlight(text: string): string {
 	const formattedText = formatText(text, "==");
 	return formattedText;
 }
 
-function underline(text: string): string {
+export function underline(text: string): string {
 	const formattedText = formatText(text, "u");
 	return formattedText;
 }
 
-function codeBlock(text: string): string {
+export function codeBlock(text: string): string {
 	const trimmedText = text.trim();
 	const formattedText = `\`\`\`\n${trimmedText}\n\`\`\``;
 	return formattedText;
 }
 
 // Complicated Action functions
-function numberedList(text: string): string {
+export function numberedList(text: string): string {
 	let counter = 0;
 
 	// Split the text into lines
@@ -110,7 +114,7 @@ function numberedList(text: string): string {
 	return formattedText;
 }
 
-function taskList(text: string): string {
+export function taskList(text: string): string {
 	// Split the text into lines
 	const lines = text.split("\\n");
 
@@ -125,7 +129,7 @@ function taskList(text: string): string {
 	return formattedText;
 }
 
-function headingsMinus(text: string): string {
+export function headingsMinus(text: string): string {
 	// Split the text into lines
 	const lines = text.split("\\n");
 
@@ -157,7 +161,7 @@ function headingsMinus(text: string): string {
 	return formattedText;
 }
 
-function headingsPlus(text: string): string {
+export function headingsPlus(text: string): string {
 	// Split the text into lines
 	const lines = text.split("\\n");
 
