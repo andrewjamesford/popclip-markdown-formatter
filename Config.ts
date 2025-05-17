@@ -11,6 +11,8 @@
 /// <reference types="@popclip/types" />
 
 export function wrapSelectedText(text: string, tag: string): string {
+	if (text.trim() === "") return text;
+
 	// Check if the text is already wrapped in the tag
 	const regex = new RegExp(
 		`^${tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(.*?)${tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`,
