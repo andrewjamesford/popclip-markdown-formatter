@@ -56,7 +56,17 @@ function inlineCode(text: string): string {
 }
 
 function bulletedList(text: string): string {
-	const formattedText = formatText(text, "- ");
+	// Split the text into lines
+	const lines = text.split("\\n");
+
+	// Map each line to the formatted version
+	const formattedLines = lines.map((line) => {
+		return `- ${line}`;
+	});
+
+	// Join the formatted lines into a single string
+	const formattedText = formattedLines.join("\\n");
+
 	return formattedText;
 }
 
@@ -77,7 +87,7 @@ function underline(text: string): string {
 
 function codeBlock(text: string): string {
 	const trimmedText = text.trim();
-	const formattedText = `\`\`\` \n${trimmedText}\n\`\`\``;
+	const formattedText = `\`\`\`\n${trimmedText}\n\`\`\``;
 	return formattedText;
 }
 
