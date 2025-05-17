@@ -7,6 +7,7 @@ import {
 	highlight,
 	underline,
 	strikethrough,
+	wrapSelectedText,
 } from "../Config";
 
 describe("bold", () => {
@@ -41,7 +42,7 @@ describe("inlineCode", () => {
 
 describe("bulletedList", () => {
 	test("adds dash to each line", () => {
-		expect(bulletedList("a\nb")).toBe("- a\n- b");
+		expect(bulletedList("a\\nb")).toBe("- a\\n- b");
 	});
 	test("handles single line", () => {
 		expect(bulletedList("a")).toBe("- a");
@@ -105,5 +106,40 @@ describe("strikethrough", () => {
 
 	test("handles unicode characters", () => {
 		expect(strikethrough("こんにちは")).toBe("~~こんにちは~~");
+	});
+});
+
+describe("wrapSelectedText", () => {
+	test("wraps text with the given tag", () => {
+		expect(wrapSelectedText("hello", "~~")).toBe("~~hello~~");
+	});
+
+	test("handles empty string", () => {
+		expect(wrapSelectedText("", "~~")).toBe("");
+	});
+
+	test("handles text with newlines", () => {
+		expect(wrapSelectedText("line1\nline2", "~~")).toBe("~~line1\nline2~~");
+	});
+
+	test("handles text with only whitespace", () => {
+		expect(wrapSelectedText("   ", "~~")).toBe("   ");
+	});
+
+	test("handles text with special characters", () => {
+		expect(wrapSelectedText("hello! @#%", "~~")).toBe("~~hello! @#%~~");
+	});
+	test("handles text with markdown already present and removes instead", () => {
+		expect(wrapSelectedText("~~already~~", "~~")).toBe("already");
+	});
+
+	test("handles multi-line text", () => {
+		const input = "first line\nsecond line\nthird line";
+		const expected = "~~first line\nsecond line\nthird line~~";
+		expect(wrapSelectedText(input, "~~")).toBe(expected);
+	});
+
+	test("handles unicode characters", () => {
+		expect(wrapSelectedText("こんにちは", "~~")).toBe("~~こんにちは~~");
 	});
 });
