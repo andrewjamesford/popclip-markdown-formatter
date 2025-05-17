@@ -12,7 +12,9 @@
 
 function wrapSelectedText(text: string, tag: string): string {
 	// Check if the text is already wrapped in the tag
-	const regex = new RegExp(`^${tag}(.*?)${tag}$`);
+	const regex = new RegExp(
+		`^${tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(.*?)${tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`,
+	);
 
 	// If it is, remove the tag
 	if (regex.test(text)) return text.replace(regex, "$1");
