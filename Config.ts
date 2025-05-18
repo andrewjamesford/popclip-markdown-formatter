@@ -79,8 +79,20 @@ export function bulletedList(text: string): string {
 }
 
 export function blockQuote(text: string): string {
-	const formattedText = `> ${text}`;
-	return formattedText;
+	// Handle empty string
+	if (text === "") return "> ";
+
+	// Split into lines, prepend '> ' to each, then join
+	const lines = text.split("\n");
+	// If the input ends with a newline, split will add an extra empty string at the end
+	// We want to avoid adding '> ' for that trailing empty line
+	const lastLineIsEmpty = lines.length > 1 && lines[lines.length - 1] === "";
+	const quotedLines = (lastLineIsEmpty ? lines.slice(0, -1) : lines).map(
+		(line) => `> ${line}`,
+	);
+	let result = quotedLines.join("\n");
+	if (lastLineIsEmpty) result += "\n";
+	return result;
 }
 
 export function highlight(text: string): string {
