@@ -7,6 +7,7 @@
 // keywords: markdown, formatter,
 // language: typescript
 // module: true
+// requirements: ['cut','formatting']
 
 /// <reference types="@popclip/types" />
 
@@ -213,47 +214,56 @@ export default {
 		{
 			title: "Bulleted List",
 			icon: "symbol:list.bullet",
-			code: (selection) => popclip.pasteText(bulletedList(selection.text)),
+			javascript: (selection) =>
+				popclip.pasteText(bulletedList(selection.text)),
+			requirements: ["formatting"],
 		},
 		{
 			title: "Block Quote",
 			icon: "symbol:quote.bubble",
-			code: (selection) => popclip.pasteText(blockQuote(selection.text)),
+			javascript: (selection) => popclip.pasteText(blockQuote(selection.text)),
+			requirements: ["formatting"],
 		},
 		{
 			title: "Inline Code",
 			icon: "symbol:chevron.left.chevron.right",
-			code: (selection) => popclip.pasteText(inlineCode(selection.text)),
+			javascript: (selection) => popclip.pasteText(inlineCode(selection.text)),
+			requirements: ["formatting"],
 		},
 		{
 			title: "Code Block",
 			icon: "iconify:fluent:code-block-edit-20-regular",
-			code: (selection) => popclip.pasteText(codeBlock(selection.text)),
+			javascript: (selection) => popclip.pasteText(codeBlock(selection.text)),
+			requirements: ["formatting"],
 		},
 		{
 			title: "Heading -",
 			icon: "square H-",
-			code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
+			javascript: (selection) =>
+				popclip.pasteText(headingsMinus(selection.text)),
+			requirements: ["formatting"],
 		},
 		{
 			title: "Heading +",
 			icon: "square H+",
-			code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
+			javascript: (selection) =>
+				popclip.pasteText(headingsPlus(selection.text)),
+			requirements: ["formatting"],
 		},
 		// {
 		//   title: "Strike through",
 		//   icon: "symbol:strikethrough",
-		//   code: (selection) => popclip.pasteText(strikethrough(selection.text)),
+		//   javascript: (selection) => popclip.pasteText(strikethrough(selection.text)),
 		// },
 		// {
 		//   title: "Numbered List",
 		//   icon: "symbol:list.number",
-		//   code: (selection) => popclip.pasteText(numberedList(selection.text)),
+		//   javascript: (selection) => popclip.pasteText(numberedList(selection.text)),
 		// },
 		// {
 		//   title: "Task List",
 		//   icon: "symbol:list.bullet.rectangle",
-		//   code: (selection) => popclip.pasteText(taskList(selection.text)),
+		//   javascript: (selection) => popclip.pasteText(taskList(selection.text)),
 		// },
 	],
 };
