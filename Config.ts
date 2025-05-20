@@ -214,56 +214,56 @@ export default {
 		{
 			title: "Bulleted List",
 			icon: "symbol:list.bullet",
-			javascript: (selection) =>
-				popclip.pasteText(bulletedList(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(bulletedList(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
 		{
 			title: "Block Quote",
 			icon: "symbol:quote.bubble",
-			javascript: (selection) => popclip.pasteText(blockQuote(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(blockQuote(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
 		{
 			title: "Inline Code",
 			icon: "symbol:chevron.left.chevron.right",
-			javascript: (selection) => popclip.pasteText(inlineCode(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(inlineCode(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
 		{
 			title: "Code Block",
 			icon: "iconify:fluent:code-block-edit-20-regular",
-			javascript: (selection) => popclip.pasteText(codeBlock(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(codeBlock(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
 		{
 			title: "Heading -",
 			icon: "square H-",
-			javascript: (selection) =>
-				popclip.pasteText(headingsMinus(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
 		{
 			title: "Heading +",
 			icon: "square H+",
-			javascript: (selection) =>
-				popclip.pasteText(headingsPlus(selection.text)),
-			requirements: ["formatting"],
+			code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
+			requirements: ["cut", "formatting"],
 		},
-		// {
-		//   title: "Strike through",
-		//   icon: "symbol:strikethrough",
-		//   javascript: (selection) => popclip.pasteText(strikethrough(selection.text)),
-		// },
-		// {
-		//   title: "Numbered List",
-		//   icon: "symbol:list.number",
-		//   javascript: (selection) => popclip.pasteText(numberedList(selection.text)),
-		// },
-		// {
-		//   title: "Task List",
-		//   icon: "symbol:list.bullet.rectangle",
-		//   javascript: (selection) => popclip.pasteText(taskList(selection.text)),
-		// },
+		{
+			title: "Strike through",
+			icon: "symbol:strikethrough",
+			code: (selection) => popclip.pasteText(strikethrough(selection.text)),
+			requirements: ["cut", "formatting"],
+		},
+		{
+			title: "Numbered List",
+			icon: "symbol:list.number",
+			code: (selection) => popclip.pasteText(numberedList(selection.text)),
+			requirements: ["cut", "formatting"],
+		},
+		{
+			title: "Task List",
+			icon: "symbol:list.bullet.rectangle",
+			code: (selection) => popclip.pasteText(taskList(selection.text)),
+			requirements: ["cut", "formatting"],
+		},
 	],
 };
