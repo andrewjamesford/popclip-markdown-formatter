@@ -229,60 +229,165 @@ export function headingsPlus(text: string): string {
 }
 
 export default {
-	actions: [
+	options: [
 		{
-			title: "Bulleted List",
-			icon: "symbol:list.bullet",
-			code: (selection) => popclip.pasteText(bulletedList(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableBulletedList",
+			type: "boolean",
+			label: "Bulleted List",
+			defaultValue: true,
 		},
 		{
-			title: "Block Quote",
-			icon: "symbol:quote.bubble",
-			code: (selection) => popclip.pasteText(blockQuote(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableBlockQuote",
+			type: "boolean",
+			label: "Block Quote",
+			defaultValue: true,
 		},
 		{
-			title: "Inline Code",
-			icon: "symbol:chevron.left.chevron.right",
-			code: (selection) => popclip.pasteText(inlineCode(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableInlineCode",
+			type: "boolean",
+			label: "Inline Code",
+			defaultValue: true,
 		},
 		{
-			title: "Code Block",
-			icon: "iconify:fluent:code-block-edit-20-regular",
-			code: (selection) => popclip.pasteText(codeBlock(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableCodeBlock",
+			type: "boolean",
+			label: "Code Block",
+			defaultValue: true,
 		},
 		{
-			title: "Heading -",
-			icon: "square H-",
-			code: (selection) => popclip.pasteText(headingsMinus(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableHeadingMinus",
+			type: "boolean",
+			label: "Heading -",
+			defaultValue: true,
 		},
 		{
-			title: "Heading +",
-			icon: "square H+",
-			code: (selection) => popclip.pasteText(headingsPlus(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableHeadingPlus",
+			type: "boolean",
+			label: "Heading +",
+			defaultValue: true,
 		},
 		{
-			title: "Strike through",
-			icon: "symbol:strikethrough",
-			code: (selection) => popclip.pasteText(strikethrough(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableStrikethrough",
+			type: "boolean",
+			label: "Strike through",
+			defaultValue: true,
 		},
 		{
-			title: "Numbered List",
-			icon: "symbol:list.number",
-			code: (selection) => popclip.pasteText(numberedList(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableNumberedList",
+			type: "boolean",
+			label: "Numbered List",
+			defaultValue: true,
 		},
 		{
-			title: "Task List",
-			icon: "symbol:list.bullet.rectangle",
-			code: (selection) => popclip.pasteText(taskList(selection.text)),
-			requirements: ["cut", "formatting"],
+			identifier: "enableTaskList",
+			type: "boolean",
+			label: "Task List",
+			defaultValue: true,
 		},
 	],
+	actions: (selection, options) => {
+		const actionsList = [];
+
+		// Only add actions for enabled options
+		if (options.enableBulletedList) {
+			actionsList.push({
+				title: "Bulleted List",
+				icon: "symbol:list.bullet",
+				code: () => {
+					popclip.pasteText(bulletedList(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableBlockQuote) {
+			actionsList.push({
+				title: "Block Quote",
+				icon: "symbol:quote.bubble",
+				code: () => {
+					popclip.pasteText(blockQuote(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableInlineCode) {
+			actionsList.push({
+				title: "Inline Code",
+				icon: "symbol:chevron.left.chevron.right",
+				code: () => {
+					popclip.pasteText(inlineCode(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableCodeBlock) {
+			actionsList.push({
+				title: "Code Block",
+				icon: "iconify:fluent:code-block-edit-20-regular",
+				code: () => {
+					popclip.pasteText(codeBlock(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableHeadingMinus) {
+			actionsList.push({
+				title: "Heading -",
+				icon: "square H-",
+				code: () => {
+					popclip.pasteText(headingsMinus(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableHeadingPlus) {
+			actionsList.push({
+				title: "Heading +",
+				icon: "square H+",
+				code: () => {
+					popclip.pasteText(headingsPlus(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableStrikethrough) {
+			actionsList.push({
+				title: "Strike through",
+				icon: "symbol:strikethrough",
+				code: () => {
+					popclip.pasteText(strikethrough(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableNumberedList) {
+			actionsList.push({
+				title: "Numbered List",
+				icon: "symbol:list.number",
+				code: () => {
+					popclip.pasteText(numberedList(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		if (options.enableTaskList) {
+			actionsList.push({
+				title: "Task List",
+				icon: "symbol:list.bullet.rectangle",
+				code: () => {
+					popclip.pasteText(taskList(selection.text));
+				},
+				requirements: ["cut", "formatting"],
+			});
+		}
+
+		return actionsList;
+	},
 };
