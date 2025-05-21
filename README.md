@@ -38,23 +38,3 @@ This extension adds the following formatting options to PopClip:
 4. The formatted text will replace your selection
 
 The extension handles multi-line text appropriately, applying the formatting to each line where relevant.
-
-## Customization
-
-You can customize which formatting options appear in your PopClip menu:
-
-1. Open PopClip preferences
-2. Find the Markdown Formatter extension
-3. Click the gear icon to access settings
-4. Toggle options on/off according to your needs:
-   - Enable/disable Bulleted List
-   - Enable/disable Block Quote
-   - Enable/disable Inline Code
-   - Enable/disable Code Block
-   - Enable/disable Heading - (decrease heading level)
-   - Enable/disable Heading + (increase heading level)
-   - Enable/disable Strike through
-   - Enable/disable Numbered List
-   - Enable/disable Task List
-
-This allows you to show only the formatting options you use frequently and hide the rest to keep your PopClip menu clean and focused.
