@@ -1,0 +1,1 @@
+Refer to the [AGENTS.md](../../AGENTS.md) file for more information.

@@ -228,12 +228,66 @@ export function headingsPlus(text: string): string {
 	return `# ${text}`;
 }
 
+const baseRequirements = (option: string) => [
+	"cut",
+	"formatting",
+	`option-${option}=1`,
+];
+
 export default {
 	options: [
 		{
 			identifier: "bulletedList",
 			type: "boolean",
 			label: "Bulleted List",
+			defaultValue: true,
+		},
+		{
+			identifier: "blockQuote",
+			type: "boolean",
+			label: "Block Quote",
+			defaultValue: true,
+		},
+		{
+			identifier: "inlineCode",
+			type: "boolean",
+			label: "Inline Code",
+			defaultValue: true,
+		},
+		{
+			identifier: "codeBlock",
+			type: "boolean",
+			label: "Code Block",
+			defaultValue: true,
+		},
+		{
+			identifier: "headingsMinus",
+			type: "boolean",
+			label: "Heading -",
+			defaultValue: true,
+		},
+		{
+			identifier: "headingsPlus",
+			type: "boolean",
+			label: "Heading +",
+			defaultValue: true,
+		},
+		{
+			identifier: "strikethrough",
+			type: "boolean",
+			label: "Strikethrough",
+			defaultValue: true,
+		},
+		{
+			identifier: "numberedList",
+			type: "boolean",
+			label: "Numbered List",
+			defaultValue: true,
+		},
+		{
+			identifier: "taskList",
+			type: "boolean",
+			label: "Task List",
 			defaultValue: true,
 		},
 	],
@@ -244,7 +298,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(bulletedList(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-bulletedList=1"],
+			requirements: baseRequirements("bulletedList"),
 		},
 		{
 			title: "Block Quote",
@@ -252,7 +306,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(blockQuote(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("blockQuote"),
 		},
 		{
 			title: "Inline Code",
@@ -260,7 +314,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(inlineCode(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("inlineCode"),
 		},
 		{
 			title: "Code Block",
@@ -268,7 +322,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(codeBlock(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("codeBlock"),
 		},
 		{
 			title: "Heading -",
@@ -276,7 +330,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(headingsMinus(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("headingsMinus"),
 		},
 		{
 			title: "Heading +",
@@ -284,7 +338,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(headingsPlus(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("headingsPlus"),
 		},
 		{
 			title: "Strike through",
@@ -292,7 +346,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(strikethrough(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("strikethrough"),
 		},
 		{
 			title: "Numbered List",
@@ -300,7 +354,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(numberedList(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("numberedList"),
 		},
 		{
 			title: "Task List",
@@ -308,7 +362,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(taskList(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: baseRequirements("taskList"),
 		},
 	],
 };
