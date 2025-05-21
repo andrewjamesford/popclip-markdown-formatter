@@ -19,6 +19,7 @@
 ## Documentation
 - PopClip Javascript API documentation is in the `docs` folder.
 - Use the [PopClip JavaScript API](https://pilotmoon.github.io/popclip-types/) for reference.
+- Update the `README.md` file with any new features or changes.
 
 ## Ignore
 - Ignore `node_modules` and `build` folders in your PR.
