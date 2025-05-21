@@ -229,6 +229,14 @@ export function headingsPlus(text: string): string {
 }
 
 export default {
+	options: [
+		{
+			identifier: "bulletedList",
+			type: "boolean",
+			label: "Bulleted List",
+			defaultValue: true,
+		},
+	],
 	actions: [
 		{
 			title: "Bulleted List",
@@ -236,7 +244,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(bulletedList(selection.text));
 			},
-			requirements: ["cut", "formatting"],
+			requirements: ["cut", "formatting", "option-bulletedList=1"],
 		},
 		{
 			title: "Block Quote",

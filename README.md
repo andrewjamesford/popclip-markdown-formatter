@@ -38,3 +38,13 @@ This extension adds the following formatting options to PopClip:
 4. The formatted text will replace your selection
 
 The extension handles multi-line text appropriately, applying the formatting to each line where relevant.
+
+## Customization
+
+You can customize which formatting options appear in your PopClip menu:
+
+1. Open PopClip preferences
+2. Find the Markdown Formatter extension
+3. Click the gear icon to access settings
+4. Toggle options on/off according to your needs:
+   - Enable/disable Bulleted List
