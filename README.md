@@ -47,4 +47,12 @@ You can customize which formatting options appear in your PopClip menu:
 2. Find the Markdown Formatter extension
 3. Click the gear icon to access settings
 4. Toggle options on/off according to your needs:
+   - Enable/disable Block Quote
    - Enable/disable Bulleted List
+   - Enable/disable Code Block
+   - Enable/disable Heading +
+   - Enable/disable Heading -
+   - Enable/disable Inline Code
+   - Enable/disable Numbered List
+   - Enable/disable Strikethrough
+   - Enable/disable Task List
