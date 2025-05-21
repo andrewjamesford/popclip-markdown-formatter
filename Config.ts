@@ -228,6 +228,12 @@ export function headingsPlus(text: string): string {
 	return `# ${text}`;
 }
 
+const baseRequirements = (option: string) => [
+	"cut",
+	"formatting",
+	`option-${option}=1`,
+];
+
 export default {
 	options: [
 		{
@@ -292,7 +298,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(bulletedList(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-bulletedList=1"],
+			requirements: baseRequirements("bulletedList"),
 		},
 		{
 			title: "Block Quote",
@@ -300,7 +306,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(blockQuote(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-blockQuote=1"],
+			requirements: baseRequirements("blockQuote"),
 		},
 		{
 			title: "Inline Code",
@@ -308,7 +314,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(inlineCode(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-inlineCode=1"],
+			requirements: baseRequirements("inlineCode"),
 		},
 		{
 			title: "Code Block",
@@ -316,7 +322,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(codeBlock(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-codeBlock=1"],
+			requirements: baseRequirements("codeBlock"),
 		},
 		{
 			title: "Heading -",
@@ -324,7 +330,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(headingsMinus(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-headingsMinus=1"],
+			requirements: baseRequirements("headingsMinus"),
 		},
 		{
 			title: "Heading +",
@@ -332,7 +338,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(headingsPlus(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-headingsPlus=1"],
+			requirements: baseRequirements("headingsPlus"),
 		},
 		{
 			title: "Strike through",
@@ -340,7 +346,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(strikethrough(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-strikethrough=1"],
+			requirements: baseRequirements("strikethrough"),
 		},
 		{
 			title: "Numbered List",
@@ -348,7 +354,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(numberedList(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-numberedList=1"],
+			requirements: baseRequirements("numberedList"),
 		},
 		{
 			title: "Task List",
@@ -356,7 +362,7 @@ export default {
 			code: (selection) => {
 				popclip.pasteText(taskList(selection.text));
 			},
-			requirements: ["cut", "formatting", "option-taskList=1"],
+			requirements: baseRequirements("taskList"),
 		},
 	],
 };
