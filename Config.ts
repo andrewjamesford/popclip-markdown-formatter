@@ -233,7 +233,7 @@ export default {
 		{
 			title: "Bulleted List",
 			icon: "symbol:list.bullet",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(bulletedList(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -241,7 +241,7 @@ export default {
 		{
 			title: "Block Quote",
 			icon: "symbol:quote.bubble",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(blockQuote(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -249,7 +249,7 @@ export default {
 		{
 			title: "Inline Code",
 			icon: "symbol:chevron.left.chevron.right",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(inlineCode(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -257,7 +257,7 @@ export default {
 		{
 			title: "Code Block",
 			icon: "iconify:fluent:code-block-edit-20-regular",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(codeBlock(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -265,7 +265,7 @@ export default {
 		{
 			title: "Heading -",
 			icon: "square H-",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(headingsMinus(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -273,7 +273,7 @@ export default {
 		{
 			title: "Heading +",
 			icon: "square H+",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(headingsPlus(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -281,7 +281,7 @@ export default {
 		{
 			title: "Strike through",
 			icon: "symbol:strikethrough",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(strikethrough(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -289,7 +289,7 @@ export default {
 		{
 			title: "Numbered List",
 			icon: "symbol:list.number",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(numberedList(selection.text));
 			},
 			requirements: ["cut", "formatting"],
@@ -297,7 +297,7 @@ export default {
 		{
 			title: "Task List",
 			icon: "symbol:list.bullet.rectangle",
-			code: () => {
+			code: (selection) => {
 				popclip.pasteText(taskList(selection.text));
 			},
 			requirements: ["cut", "formatting"],
