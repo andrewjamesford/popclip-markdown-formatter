@@ -18,7 +18,7 @@ describe("blockQuote", () => {
 	});
 
 	test("handles multiline input", () => {
-	expect(blockQuote("line1\nline2")).toBe("> line1\n> line2");
+		expect(blockQuote("line1\nline2")).toBe("> line1\n> line2");
 	});
 
 	test("handles leading and trailing whitespace", () => {

@@ -1,28 +1,20 @@
 {
-  "compilerOptions": {
-    "target": "es2018",
-    "types": [
-      "@popclip/types"
-    ],
-    "lib": [
-      "ES2022",
-      "dom",
-      "dom.iterable"
-    ],
-    "module": "ES2022",
-    "moduleResolution": "bundler",
-    "baseUrl": "./lib",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true,
-  },
-  "include": [
-    "*.ts"
-  ]
+	"compilerOptions": {
+		"target": "es2018",
+		"types": ["@popclip/types"],
+		"lib": ["ES2022", "dom", "dom.iterable"],
+		"module": "ES2022",
+		"moduleResolution": "bundler",
+		"baseUrl": "./lib",
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"allowImportingTsExtensions": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["*.ts"]
 }
