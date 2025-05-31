@@ -2,6 +2,8 @@
 
 A PopClip extension that provides quick Markdown formatting options for text.
 
+![markdown formatter screenshot](markdown-formatter.png)
+
 ## Author
 
 Andrew Ford - https://andrewford.co.nz
