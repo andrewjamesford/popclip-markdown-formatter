@@ -293,6 +293,14 @@ export default {
 	],
 	actions: [
 		{
+			title: "Strike through",
+			icon: "symbol:strikethrough",
+			code: (selection) => {
+				popclip.pasteText(strikethrough(selection.text));
+			},
+			requirements: baseRequirements("strikethrough"),
+		},
+		{
 			title: "Bulleted List",
 			icon: "symbol:list.bullet",
 			code: (selection) => {
@@ -301,8 +309,24 @@ export default {
 			requirements: baseRequirements("bulletedList"),
 		},
 		{
+			title: "Numbered List",
+			icon: "symbol:list.number",
+			code: (selection) => {
+				popclip.pasteText(numberedList(selection.text));
+			},
+			requirements: baseRequirements("numberedList"),
+		},
+		{
+			title: "Task List",
+			icon: "symbol:checklist",
+			code: (selection) => {
+				popclip.pasteText(taskList(selection.text));
+			},
+			requirements: baseRequirements("taskList"),
+		},
+		{
 			title: "Block Quote",
-			icon: "symbol:quote.bubble",
+			icon: "symbol:text.quote",
 			code: (selection) => {
 				popclip.pasteText(blockQuote(selection.text));
 			},
@@ -310,7 +334,7 @@ export default {
 		},
 		{
 			title: "Inline Code",
-			icon: "symbol:chevron.left.chevron.right",
+			icon: "symbol:chevron.left.forwardslash.chevron.right",
 			code: (selection) => {
 				popclip.pasteText(inlineCode(selection.text));
 			},
@@ -318,7 +342,7 @@ export default {
 		},
 		{
 			title: "Code Block",
-			icon: "iconify:fluent:code-block-edit-20-regular",
+			icon: "square symbol:chevron.left.forwardslash.chevron.right",
 			code: (selection) => {
 				popclip.pasteText(codeBlock(selection.text));
 			},
@@ -339,30 +363,6 @@ export default {
 				popclip.pasteText(headingsPlus(selection.text));
 			},
 			requirements: baseRequirements("headingsPlus"),
-		},
-		{
-			title: "Strike through",
-			icon: "symbol:strikethrough",
-			code: (selection) => {
-				popclip.pasteText(strikethrough(selection.text));
-			},
-			requirements: baseRequirements("strikethrough"),
-		},
-		{
-			title: "Numbered List",
-			icon: "symbol:list.number",
-			code: (selection) => {
-				popclip.pasteText(numberedList(selection.text));
-			},
-			requirements: baseRequirements("numberedList"),
-		},
-		{
-			title: "Task List",
-			icon: "symbol:list.bullet.rectangle",
-			code: (selection) => {
-				popclip.pasteText(taskList(selection.text));
-			},
-			requirements: baseRequirements("taskList"),
 		},
 	],
 };
