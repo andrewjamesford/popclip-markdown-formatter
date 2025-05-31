@@ -10,25 +10,19 @@ Andrew Ford - https://andrewford.co.nz
 
 This extension adds the following formatting options to PopClip:
 
-### Essential Formatting
-- **Bold**: Wraps selected text with `**` markers
-- **Italic**: Wraps selected text with `_` markers  
-- **Highlight**: Wraps selected text with `==` markers
+### Markdown Formatting
 
-
-- **Inline Code**: Wraps selected text with backticks (`)
-- **Blockquote**: Prepends `> ` to each line
-- **Unordered List**: Prepends `- ` to each line
-
-### Advanced Formatting
-- **Code Block**: Wraps selected text with triple backticks (```) and adds a language identifier (e.g., `python`, `javascript`, etc.)
-- **Ordered List**: Prepends `1. ` to each line
-- **Task List**: Prepends `- [ ] ` to each line
-- **Underline**: Wraps selected text with `<u>` HTML tags
 - **Strikethrough**: Wraps selected text with `~~` markers
-- **H1**: Prepends `# ` to each line
-- **H2**: Prepends `## ` to each line
-- etc
+- **Bulleted List**: Prepends `- ` to each line
+- **Numbered List**: Prepends a number `1. ` to each line
+- **Task List**: Prepends `- [ ] ` to each line
+- **Block Quote**: Prepends `> ` to each line
+- **Inline Code**: Wraps selected text with backticks (`` ` ``)
+- **Code Block**: Wraps selected text with triple backticks (```` </> ````) and adds a language identifier
+- **Heading -**: Drops the selected text into a Markdown heading format (e.g., `# Heading`, `## Subheading`, etc.)
+- **Heading +**: Ups the selected text into a Markdown heading format (e.g., `# Heading`, `## Subheading`, etc.)
+
+Note all options are optional and can be toggled on or off in the extension settings.
 
 ## Usage
 
@@ -39,24 +33,12 @@ This extension adds the following formatting options to PopClip:
 
 The extension handles multi-line text appropriately, applying the formatting to each line where relevant.
 
-## Customization
+## Customisation
 
 You can customize which formatting options appear in your PopClip menu:
 
 1. Open PopClip preferences
 2. Find the Markdown Formatter extension
 3. Click the gear icon to access settings
-4. Toggle options on/off according to your needs:
-   - Enable/disable Bold
-   - Enable/disable Italic
-   - Enable/disable Highlight
-   - Enable/disable Inline Code
-   - Enable/disable Block Quote
-   - Enable/disable Unordered List
-   - Enable/disable Code Block
-   - Enable/disable Ordered List
-   - Enable/disable Task List
-   - Enable/disable Underline
-   - Enable/disable Strikethrough
-   - Enable/disable H1
-   - Enable/disable H2
+4. Toggle options on/off according to your needs
+
