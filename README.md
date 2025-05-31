@@ -42,3 +42,14 @@ You can customize which formatting options appear in your PopClip menu:
 3. Click the gear icon to access settings
 4. Toggle options on/off according to your needs
 
+## Building and Installing
+
+To build and install the extension:
+
+1. Clone the repository or download the source code.
+2. Run `npm install` to install dependencies.
+3. Run `chmod +x bundle.sh` to make the script executable.
+4. Run `./bundle.sh` to create the PopClip extension bundle.
+5. Go to the build directory and double click the `MarkdownFormatter.popclipext` file to install it in PopClip.
+
+Note you may get a warning about the extension being from an unidentified developer. You can bypass this by holding down the `Control` key while clicking the file and selecting "Open".
