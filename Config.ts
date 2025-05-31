@@ -237,9 +237,27 @@ const baseRequirements = (option: string) => [
 export default {
 	options: [
 		{
+			identifier: "strikethrough",
+			type: "boolean",
+			label: "Strikethrough",
+			defaultValue: true,
+		},
+		{
 			identifier: "bulletedList",
 			type: "boolean",
 			label: "Bulleted List",
+			defaultValue: true,
+		},
+		{
+			identifier: "numberedList",
+			type: "boolean",
+			label: "Numbered List",
+			defaultValue: true,
+		},
+		{
+			identifier: "taskList",
+			type: "boolean",
+			label: "Task List",
 			defaultValue: true,
 		},
 		{
@@ -270,24 +288,6 @@ export default {
 			identifier: "headingsPlus",
 			type: "boolean",
 			label: "Heading +",
-			defaultValue: true,
-		},
-		{
-			identifier: "strikethrough",
-			type: "boolean",
-			label: "Strikethrough",
-			defaultValue: true,
-		},
-		{
-			identifier: "numberedList",
-			type: "boolean",
-			label: "Numbered List",
-			defaultValue: true,
-		},
-		{
-			identifier: "taskList",
-			type: "boolean",
-			label: "Task List",
 			defaultValue: true,
 		},
 	],
