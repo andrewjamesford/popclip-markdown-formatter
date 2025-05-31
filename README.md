@@ -18,7 +18,7 @@ This extension adds the following formatting options to PopClip:
 - **Task List**: Prepends `- [ ] ` to each line
 - **Block Quote**: Prepends `> ` to each line
 - **Inline Code**: Wraps selected text with backticks (`` ` ``)
-- **Code Block**: Wraps selected text with triple backticks (```` </> ````) and adds a language identifier
+- **Code Block**: Wraps selected text with triple backticks (```` ``` ````) and adds a language identifier
 - **Heading -**: Drops the selected text into a Markdown heading format (e.g., `# Heading`, `## Subheading`, etc.)
 - **Heading +**: Ups the selected text into a Markdown heading format (e.g., `# Heading`, `## Subheading`, etc.)
 
